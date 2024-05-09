@@ -17,24 +17,26 @@ const SearchBar = ({ onSearch }) => {
           actions.resetForm();
         }}
       >
-        <Form className={s.form}>
-          <Field name="query">
-            {({ field }) => (
-              <input
-                className={s.input}
-                {...field}
-                type="text"
-                autoComplete="off"
-                autoFocus
-                placeholder="Search images and photos"
-              />
-            )}
-          </Field>
-          <button className="s.button" type="submit">
-            <IoMdSearch />
-          </button>
-        </Form>
-        <Toaster />
+        <div>
+          <Form className={s.form}>
+            <Field name="query">
+              {({ field }) => (
+                <input
+                  {...field}
+                  className={s.input}
+                  type="text"
+                  autoComplete="off"
+                  autoFocus
+                  placeholder="Search images and photos"
+                />
+              )}
+            </Field>
+            <button className={s.button} type="submit">
+              <IoMdSearch />
+            </button>
+          </Form>
+          <Toaster />
+        </div>
       </Formik>
     </header>
   );
